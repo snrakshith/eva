@@ -12,7 +12,7 @@ class Eva {
       return exp.slice(1, -1);
     }
     if (exp[0] === "+") {
-      return exp[1] + exp[2];
+      return this.eval(exp[1]) + this.eval(exp[2]);
     }
     throw "Unimplemented";
   }
