@@ -1,0 +1,15 @@
+{
+  "name": "eva",
+  "version": "1.0.0",
+  "description": "A simple interpreter",
+  "main": "index.js",
+  "scripts": {
+    "eva": "node eva.js"
+  },
+  "keywords": [],
+  "author": "Rakshith",
+  "license": "MIT",
+  "dependencies": {
+    "assert": "^2.0.0"
+  }
+}
