@@ -11,10 +11,21 @@ class Eva {
     if (isString(exp)) {
       return exp.slice(1, -1);
     }
+    // --------------------------
+    // Math Opertion
     if (exp[0] === "+") {
       return this.eval(exp[1]) + this.eval(exp[2]);
     }
-    throw "Unimplemented";
+    if (exp[0] === "-") {
+      return this.eval(exp[1]) - this.eval(exp[2]);
+    }
+    if (exp[0] === "*") {
+      return this.eval(exp[1]) * this.eval(exp[2]);
+    }
+    if (exp[0] === "/") {
+      return this.eval(exp[1]) / this.eval(exp[2]);
+    }
+    throw `Unimplemented: ${JSON.stringify(exp)}`;
   }
 }
 
@@ -32,7 +43,10 @@ const eva = new Eva();
 // Tests
 assert.strictEqual(eva.eval(1), 1);
 assert.strictEqual(eva.eval(["+", 5, 5]), 10);
-// assert.strictEqual(eva.eval(['+', ['+', 5, 5], 5]), 15);
+assert.strictEqual(eva.eval(["-", 7, 5]), 2);
+assert.strictEqual(eva.eval(["*", 5, 5]), 25);
+assert.strictEqual(eva.eval(["/", 5, 5]), 1);
+assert.strictEqual(eva.eval(["+", ["+", 5, 5], 5]), 15);
 assert.strictEqual(eva.eval('"hello"'), "hello");
 
 // Incase of all Tests Pass
