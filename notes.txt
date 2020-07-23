@@ -1,5 +1,6 @@
-assert
-husky
-eslint
-babel
-prettier
+L-6 : Variables and Enviromnments
+    - Record Storage
+    - Define a Variable 
+    - Lookup to an Variable
+L-7 : Assignment Expressions and Nested Enviromnments
+    - 
